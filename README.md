@@ -73,7 +73,7 @@ Oct 06 03:54:46 dockerVM systemd[1]: Started Docker Application Container Engine
 Hint: Some lines were ellipsized, use -l to show in full.
 [root@dockerVM ~]# systemctl status docker
 ~~~
-
+* **On host machine** 
 ~~~
 ╰─$ ps fxa | grep -i docker                
 ~~~
