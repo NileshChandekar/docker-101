@@ -84,3 +84,45 @@ Hint: Some lines were ellipsized, use -l to show in full.
 | ubuntuVM | RUNNING | 192.168.100.127 (eth0) |
 +----------+---------+------------------------+
 ~~~
+
+~~~
+root@ubuntuVM:~# cat /etc/os-release
+NAME="Ubuntu"
+VERSION="16.04.7 LTS (Xenial Xerus)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 16.04.7 LTS"
+VERSION_ID="16.04"
+HOME_URL="http://www.ubuntu.com/"
+SUPPORT_URL="http://help.ubuntu.com/"
+BUG_REPORT_URL="http://bugs.launchpad.net/ubuntu/"
+VERSION_CODENAME=xenial
+UBUNTU_CODENAME=xenial
+root@ubuntuVM:~#
+~~~
+
+~~~
+root@ubuntuVM:~# aptitude install docker.io
+~~~
+
+~~~
+root@ubuntuVM:~# systemctl status docker
+● docker.service - Docker Application Container Engine
+   Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)
+   Active: active (running) since Tue 2020-10-06 03:52:34 UTC; 6min ago
+     Docs: https://docs.docker.com
+ Main PID: 3650 (dockerd)
+   CGroup: /system.slice/docker.service
+           └─3650 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+
+Oct 06 03:52:34 ubuntuVM dockerd[3650]: time="2020-10-06T03:52:34.530128367Z" level=info msg="Loading containers: start."
+Oct 06 03:52:34 ubuntuVM dockerd[3650]: time="2020-10-06T03:52:34.531211887Z" level=warning msg="Running modprobe nf_nat failed with messa
+Oct 06 03:52:34 ubuntuVM dockerd[3650]: time="2020-10-06T03:52:34.532000827Z" level=warning msg="Running modprobe xt_conntrack failed with
+Oct 06 03:52:34 ubuntuVM dockerd[3650]: time="2020-10-06T03:52:34.594125926Z" level=info msg="Default bridge (docker0) is assigned with an
+Oct 06 03:52:34 ubuntuVM dockerd[3650]: time="2020-10-06T03:52:34.635551933Z" level=info msg="Loading containers: done."
+Oct 06 03:52:34 ubuntuVM dockerd[3650]: time="2020-10-06T03:52:34.659834361Z" level=warning msg="failed to retrieve runc version: unknown
+Oct 06 03:52:34 ubuntuVM dockerd[3650]: time="2020-10-06T03:52:34.660992971Z" level=info msg="Docker daemon" commit=2d0083d graphdriver(s)
+Oct 06 03:52:34 ubuntuVM dockerd[3650]: time="2020-10-06T03:52:34.661133878Z" level=info msg="Daemon has completed initialization"
+Oct 06 03:52:34 ubuntuVM dockerd[3650]: time="2020-10-06T03:52:34.677911826Z" level=info msg="API listen on /var/run/docker.sock"
+Oct 06 03:52:34 ubuntuVM systemd[1]: Started Docker Application Container Engine.
+~~~
