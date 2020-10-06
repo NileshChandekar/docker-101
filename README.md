@@ -72,8 +72,23 @@ Oct 06 03:54:46 dockerVM dockerd-current[642]: time="2020-10-06T03:54:46.6867425
 Oct 06 03:54:46 dockerVM systemd[1]: Started Docker Application Container Engine.
 Hint: Some lines were ellipsized, use -l to show in full.
 [root@dockerVM ~]# systemctl status docker
-~~~~
+~~~
 
+~~~
+╰─$ ps fxa | grep -i docker                
+~~~
+
+~~~
+198332 ?        Ssl    0:01      \_ /usr/bin/dockerd-current --add-runtime docker-runc=/usr/libexec/docker/docker-runc-current --default-runtime=docker-runc --exec-opt native.cgroupdriver=systemd --userland-proxy-path=/usr/libexec/docker/docker-proxy-current --init-path=/usr/libexec/docker/docker-init-current --seccomp-profile=/etc/docker/seccomp.json --selinux-enabled --log-driver=journald --signature-verification=false --storage-driver overlay2
+~~~
+
+~~~
+198344 ?        Ssl    0:00          \_ /usr/bin/docker-containerd-current -l unix:///var/run/docker/libcontainerd/docker-containerd.sock --metrics-interval=0 --start-timeout 2m --state-dir /var/run/docker/libcontainerd/containerd --shim docker-containerd-shim --runtime docker-runc --runtime-args --systemd-cgroup=true
+~~~
+
+~~~
+196014 ?        Ssl    0:00      \_ /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+~~~
 
 * On Ubuntu;
 
