@@ -1,10 +1,10 @@
 # docker-101
 ## What is docker
-* Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers.
+* **Docker** is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers.
 
-* Docker Engine is an open source containerization technology for building and containerizing your applications
+* **Docker Engine** is an open source containerization technology for building and containerizing your applications
 
-* Containers are isolated from one another and bundle their own software, libraries and configuration files; they can communicate with each other through well-defined channels.
+* **Containers** are isolated from one another and bundle their own software, libraries and configuration files; they can communicate with each other through well-defined channels.
 
 * Container's are:
   * lightweight : Absence of Kernel/OS
@@ -14,3 +14,26 @@
   * Resource limit - Uses **cgroups** to limit the resource utilization.
 
   ![Image ipa](https://github.com/NileshChandekar/docker-101/blob/main/images/1.png)
+
+## Installation
+* On CenOS7;
+
+~~~
++----------+---------+------------------------+
+|   NAME   |  STATE  |          IPV4          |
++----------+---------+------------------------+
+| dockerVM | RUNNING | 192.168.100.219 (eth0) |
++----------+---------+------------------------+
+~~~
+
+*
+
+* On Ubuntu;
+
+~~~
++----------+---------+------------------------+
+|   NAME   |  STATE  |          IPV4          |
++----------+---------+------------------------+
+| ubuntuVM | RUNNING | 192.168.100.127 (eth0) |
++----------+---------+------------------------+
+~~~
