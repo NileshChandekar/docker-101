@@ -15,6 +15,31 @@
 
   ![Image ipa](https://github.com/NileshChandekar/docker-101/blob/main/images/1.png)
 
+## Docker Components
+
+* Docker CLI (docker) ``/usr/bin/docker``
+  *  only responsible for user friendly communication with docker.
+* Dockerd `/usr/bin/dockerd`
+  * dockerd listens for Docker API requests and manages host's Container life-cycles by utilizing contanerd
+* Containerd `/usr/bin/docker-containerd`
+  * main responsibilty of managing containers life-cycle, So it also take care of.
+    * Image push and pull
+    * Managing of storage
+    * Of course executing of Containers by calling runc with the right parameters to run containers...
+    * Managing of network primitives for interfaces
+    * Management of network namespaces containers to join existing namespaces
+* RunC `/usr/bin/docker-runc`
+  * runc is a command line client for running applications packaged according to
+the OCI format and is a compliant implementation of the OCI spec.
+* containerd-ctr `/usr/bin/docker-containerd-ctr`
+  *  it's barebone CLI (ctr) designed specifically for development and debugging purpose
+* containerd-shim `/usr/bin/docker-containerd-shim`
+    * Use for daemonless containers.
+
+###  whole process chain:
+
+`dockerd --> containerd --> containerd-shim --> "sleep 60" (desired process in the container).`
+
 ## Installation
 * On CentOS-7;
 
@@ -73,7 +98,7 @@ Oct 06 03:54:46 dockerVM systemd[1]: Started Docker Application Container Engine
 Hint: Some lines were ellipsized, use -l to show in full.
 [root@dockerVM ~]# systemctl status docker
 ~~~
-* **On host machine** 
+* **On host machine**
 ~~~
 ╰─$ ps fxa | grep -i docker                
 ~~~
@@ -248,7 +273,7 @@ REPOSITORY          TAG                 IMAGE ID            CREATED             
 [root@dockerVM ~]#
 ~~~
 
-* **docker start** - To start stopped/exeited container.
+* **docker start** - To start stopped/exited container.
 ~~~
 [root@dockerVM ~]# docker start [OPTIONS] CONTAINER [CONTAINER...]
 Options:
