@@ -130,6 +130,7 @@ Oct 06 03:52:34 ubuntuVM systemd[1]: Started Docker Application Container Engine
 **NOTE** - Here we will use only **CentOS** vm for our training from now.
 
 ## Basic Commands
+
 * Docker help:
 ~~~
 [root@dockerVM ~]# docker --help
@@ -207,5 +208,38 @@ Commands:
   wait        Block until one or more containers stop, then print their exit codes
 
 Run 'docker COMMAND --help' for more information on a command.
+[root@dockerVM ~]#
+~~~
+
+
+* **docker ps** - list all running container's
+~~~
+[root@dockerVM ~]# docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+[root@dockerVM ~]#
+~~~
+
+* **docker ps -a** - list all running and non-running container's
+~~~
+[root@dockerVM ~]# docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+[root@dockerVM ~]#
+~~~
+
+* **docker images** - list all images, downloaded previously
+~~~
+[root@dockerVM ~]# docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+[root@dockerVM ~]#
+~~~
+
+* **docker start** - To start stopped/exeited container.
+~~~
+[root@dockerVM ~]# docker start [OPTIONS] CONTAINER [CONTAINER...]
+Options:
+  -a, --attach               Attach STDOUT/STDERR and forward signals
+      --detach-keys string   Override the key sequence for detaching a container
+      --help                 Print usage
+  -i, --interactive          Attach container's STDIN
 [root@dockerVM ~]#
 ~~~
